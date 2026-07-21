@@ -1,0 +1,106 @@
+/* ============================================================
+   VIDE OIT Help Desk — Design Tokens
+   Shared CSS variables for the client portal + staff panel themes.
+   Edit THIS file to update brand colors everywhere at once.
+   ============================================================ */
+
+:root {
+  /* --- VIDE Brand Palette (update to exact PMS/hex when you have
+         the official brand sheet — these are placeholder-but-real
+         navy/gold government-style values) --- */
+  --vide-navy-900:   #0a1f44;   /* primary header / nav */
+  --vide-navy-800:   #102a56;
+  --vide-navy-700:   #163a70;
+  --vide-navy-600:   #1e4c8f;
+  --vide-gold-500:   #f2a900;   /* primary accent */
+  --vide-gold-600:   #d69400;
+  --vide-gold-100:   #fdf1d6;
+  --vide-white:      #ffffff;
+  --vide-gray-50:    #f7f8fa;
+  --vide-gray-100:   #eef0f3;
+  --vide-gray-200:   #dde1e7;
+  --vide-gray-300:   #c3c9d1;
+  --vide-gray-500:   #6b7280;
+  --vide-gray-700:   #374151;
+  --vide-gray-900:   #1a1d23;
+
+  /* --- Status colors (kept close to osTicket defaults so agents'
+         muscle memory for open/overdue/closed still works) --- */
+  --vide-status-open:     #1e8e5a;
+  --vide-status-overdue:  #d64545;
+  --vide-status-pending:  #d69400;
+  --vide-status-closed:   #6b7280;
+
+  /* --- Typography --- */
+  --vide-font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                     Helvetica, Arial, sans-serif;
+  --vide-font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  /* --- Layout --- */
+  --vide-radius-sm: 4px;
+  --vide-radius-md: 8px;
+  --vide-radius-lg: 14px;
+  --vide-shadow-sm: 0 1px 2px rgba(10, 31, 68, 0.08);
+  --vide-shadow-md: 0 4px 14px rgba(10, 31, 68, 0.12);
+  --vide-shadow-lg: 0 10px 30px rgba(10, 31, 68, 0.18);
+  --vide-header-height: 64px;
+  --vide-header-height-mobile: 56px;
+
+  /* --- Focus ring (accessibility) --- */
+  --vide-focus-ring: 0 0 0 3px rgba(242, 169, 0, 0.5);
+
+  /* --- Spacing scale --- */
+  --vide-space-1: 4px;
+  --vide-space-2: 8px;
+  --vide-space-3: 12px;
+  --vide-space-4: 16px;
+  --vide-space-5: 24px;
+  --vide-space-6: 32px;
+
+  /* --- Motion --- */
+  --vide-transition-fast: 120ms ease;
+  --vide-transition-base: 200ms ease;
+
+  /* --- Touch target minimum (WCAG 2.5.5 / iOS HIG) --- */
+  --vide-touch-target: 44px;
+
+  /* --- z-index scale --- */
+  --vide-z-nav: 900;
+  --vide-z-overlay: 950;
+  --vide-z-modal: 1000;
+  --vide-z-toast: 1100;
+}
+
+/* --- Dark mode overrides (staff panel opts in via [data-theme="dark"],
+       client portal respects OS preference automatically) --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --vide-gray-50:  #14181f;
+    --vide-gray-100: #1b202a;
+    --vide-gray-200: #293142;
+    --vide-gray-300: #3a4557;
+    --vide-white:    #1b202a;
+    --vide-gray-900: #eef0f3;
+    --vide-gray-700: #c3c9d1;
+  }
+}
+
+[data-theme="dark"] {
+  --vide-gray-50:  #14181f;
+  --vide-gray-100: #1b202a;
+  --vide-gray-200: #293142;
+  --vide-gray-300: #3a4557;
+  --vide-white:    #1b202a;
+  --vide-gray-900: #eef0f3;
+  --vide-gray-700: #c3c9d1;
+}
+
+/* --- Respect reduced-motion preference --- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
