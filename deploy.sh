@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# VIDE OIT Help Desk — osTicket + Theme Bootstrap
+# osTicket Helpdesk Theme Bootstrap
 #
 # Downloads the REAL, official osTicket source (this repo does not
 # vendor a copy of it — see README for why) into ./osticket, then
@@ -17,7 +17,7 @@ TARGET_DIR="${1:-./osticket}"
 OSTICKET_TAG="${OSTICKET_TAG:-v1.18.2}"   # pin a known-good release; override with env var if needed
 THEME_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/theme"
 
-echo "== VIDE OIT osTicket bootstrap =="
+echo "== osTicket Helpdesk Theme bootstrap =="
 echo "Target dir : $TARGET_DIR"
 echo "osTicket   : $OSTICKET_TAG"
 echo
@@ -35,23 +35,23 @@ fi
 
 # --- 2) Copy this repo's theme assets into osTicket's expected paths ---
 echo "-> Installing theme files..."
-mkdir -p "$TARGET_DIR/css/vide" "$TARGET_DIR/js/vide" "$TARGET_DIR/images/vide"
-cp "$THEME_DIR"/css/*.css   "$TARGET_DIR/css/vide/"
-cp "$THEME_DIR"/js/*.js     "$TARGET_DIR/js/vide/"
-[ -f "$THEME_DIR/assets/vide-logo-placeholder.svg" ] && cp "$THEME_DIR/assets/vide-logo-placeholder.svg" "$TARGET_DIR/images/vide/"
-[ -f "$THEME_DIR/assets/vide-logo.png" ] && cp "$THEME_DIR/assets/vide-logo.png" "$TARGET_DIR/images/vide/"
+mkdir -p "$TARGET_DIR/css/helpdesk" "$TARGET_DIR/js/helpdesk" "$TARGET_DIR/images/helpdesk"
+cp "$THEME_DIR"/css/*.css   "$TARGET_DIR/css/helpdesk/"
+cp "$THEME_DIR"/js/*.js     "$TARGET_DIR/js/helpdesk/"
+[ -f "$THEME_DIR/assets/helpdesk-logo-placeholder.svg" ] && cp "$THEME_DIR/assets/helpdesk-logo-placeholder.svg" "$TARGET_DIR/images/helpdesk/"
+[ -f "$THEME_DIR/assets/helpdesk-logo.png" ] && cp "$THEME_DIR/assets/helpdesk-logo.png" "$TARGET_DIR/images/helpdesk/"
 
 # --- 3) Auto-patch the two header includes (idempotent — checks for a marker first) ---
 patch_header() {
   local file="$1"
-  local marker="VIDE-THEME-INJECT"
+  local marker="HELPDESK-THEME-INJECT"
   local snippet="$2"
 
   if [ ! -f "$file" ]; then
     echo "   ! Could not find $file — skipping (osTicket may have moved this file in a newer release; patch it manually per README)."
     return
   fi
-  if grep -q "$marker" "$file"; then
+  if grep -q "$marker" "$file" ]; then
     echo "   - $file already patched, skipping."
     return
   fi
@@ -73,15 +73,15 @@ patch_header() {
   fi
 }
 
-CLIENT_SNIPPET='<!-- VIDE-THEME-INJECT -->
-<link rel="stylesheet" href="/css/vide/vide-tokens.css">
-<link rel="stylesheet" href="/css/vide/vide-client-portal.css">
-<script src="/js/vide/vide-client-portal.js" defer></script>'
+CLIENT_SNIPPET='<!-- HELPDESK-THEME-INJECT -->
+<link rel="stylesheet" href="/css/helpdesk/helpdesk-tokens.css">
+<link rel="stylesheet" href="/css/helpdesk/helpdesk-client-portal.css">
+<script src="/js/helpdesk/helpdesk-client-portal.js" defer></script>'
 
-STAFF_SNIPPET='<!-- VIDE-THEME-INJECT -->
-<link rel="stylesheet" href="/css/vide/vide-tokens.css">
-<link rel="stylesheet" href="/css/vide/vide-staff-panel.css">
-<script src="/js/vide/vide-staff-panel.js" defer></script>'
+STAFF_SNIPPET='<!-- HELPDESK-THEME-INJECT -->
+<link rel="stylesheet" href="/css/helpdesk/helpdesk-tokens.css">
+<link rel="stylesheet" href="/css/helpdesk/helpdesk-staff-panel.css">
+<script src="/js/helpdesk/helpdesk-staff-panel.js" defer></script>'
 
 echo "-> Patching client portal header..."
 patch_header "$TARGET_DIR/include/client/header.inc.php" "$CLIENT_SNIPPET"
@@ -91,8 +91,8 @@ patch_header "$TARGET_DIR/include/staff/header.inc.php" "$STAFF_SNIPPET"
 
 # --- 4) Permissions ---
 echo "-> Setting permissions..."
-find "$TARGET_DIR/css/vide" "$TARGET_DIR/js/vide" "$TARGET_DIR/images/vide" -type f -exec chmod 644 {} \;
-find "$TARGET_DIR/css/vide" "$TARGET_DIR/js/vide" "$TARGET_DIR/images/vide" -type d -exec chmod 755 {} \;
+find "$TARGET_DIR/css/helpdesk" "$TARGET_DIR/js/helpdesk" "$TARGET_DIR/images/helpdesk" -type f -exec chmod 644 {} \;
+find "$TARGET_DIR/css/helpdesk" "$TARGET_DIR/js/helpdesk" "$TARGET_DIR/images/helpdesk" -type d -exec chmod 755 {} \;
 
 echo
 echo "== Done =="
@@ -102,6 +102,6 @@ echo "  2. If osTicket itself isn't installed yet, run its web installer"
 echo "     (visit the site, follow setup/ wizard) — that part is unchanged"
 echo "     by this script, it only handles the theme."
 echo "  3. Hard-refresh (Ctrl+Shift+R) the client portal and staff panel."
-echo "  4. If /css/vide/... 404s in DevTools Network tab, your web root"
+echo "  4. If /css/helpdesk/... 404s in DevTools Network tab, your web root"
 echo "     path doesn't match \$TARGET_DIR — adjust the href/src paths in"
 echo "     the injected <link> tags to match your actual URL structure."

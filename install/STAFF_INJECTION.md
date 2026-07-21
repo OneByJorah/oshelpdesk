@@ -11,23 +11,23 @@ File to edit: `include/staff/header.inc.php`
 
 3. Immediately after it, add:
    ```php
-   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/vide/vide-tokens.css">
-   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/vide/vide-staff-panel.css">
+   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/helpdesk/helpdesk-tokens.css">
+   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/helpdesk/helpdesk-staff-panel.css">
    ```
 
 3b. Right before `</body>` in the same file (or in the staff footer include
    if there is one), add:
    ```php
-   <script src="<?php echo ROOT_PATH; ?>js/vide/vide-staff-panel.js"></script>
+   <script src="<?php echo ROOT_PATH; ?>js/helpdesk/helpdesk-staff-panel.js"></script>
    ```
    This powers the mobile sidebar toggle and the dark-mode toggle — CSS
    alone won't add those, they need the JS.
 
 4. Upload:
-   - `css/vide/vide-tokens.css`
-   - `css/vide/vide-staff-panel.css`
-   - `js/vide/vide-staff-panel.js`
-   - your logo to `images/vide/vide-logo.png`
+   - `css/helpdesk/helpdesk-tokens.css`
+   - `css/helpdesk/helpdesk-staff-panel.css`
+   - `js/helpdesk/helpdesk-staff-panel.js`
+   - your logo to `images/helpdesk/helpdesk-logo.png`
 
 5. **Test on a staging copy of osTicket first, or at minimum during
    off-hours.** The staff panel is JS-heavy (drag-resizable ticket

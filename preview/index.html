@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIDE OIT Help Desk — Theme Preview</title>
-<!-- These are the SAME files you deploy to css/vide/ on the server.
-     If you edit ../css/vide-tokens.css etc, this preview updates too. -->
-<link rel="stylesheet" href="../theme/css/vide-tokens.css">
-<link rel="stylesheet" href="../theme/css/vide-client-portal.css">
+<title>Helpdesk Theme Preview</title>
+<!-- These are the SAME files you deploy to css/helpdesk/ on the server.
+     If you edit ../css/helpdesk-tokens.css etc, this preview updates too. -->
+<link rel="stylesheet" href="../theme/css/helpdesk-tokens.css">
+<link rel="stylesheet" href="../theme/css/helpdesk-client-portal.css">
 <style>
   /* preview-only chrome, not part of the deployed theme */
   body { margin:0; }
@@ -31,16 +31,16 @@
 <body>
 
 <div class="preview-bar">
-  <b>VIDE OIT Preview</b>
+  <b>Helpdesk Theme Preview</b>
   <button id="btn-client" class="active" onclick="showView('client')">Client Portal</button>
   <button id="btn-staff" onclick="showView('staff')">Staff Panel</button>
 </div>
 
-<!-- ================= CLIENT PORTAL (uses real vide-client-portal.css classes) ================= -->
+<!-- ================= CLIENT PORTAL (uses real helpdesk-client-portal.css classes) ================= -->
 <div id="client" class="view active">
   <div id="header" class="header">
-    <img class="logo" src="../theme/assets/vide-logo-placeholder.svg" alt="VIDE logo">
-    <h1>VIDE OIT Help Desk</h1>
+    <img class="logo" src="../theme/assets/helpdesk-logo-placeholder.svg" alt="Helpdesk logo">
+    <h1>Help Desk</h1>
   </div>
   <ul id="nav" class="nav">
     <li class="active"><a href="#">Open a Ticket</a></li>
@@ -58,7 +58,7 @@
         <input type="text" placeholder="Jane Rodriguez">
 
         <label>Email Address</label>
-        <input type="email" placeholder="jane.rodriguez@vide.vi">
+        <input type="email" placeholder="jane.rodriguez@example.com">
 
         <label>District</label>
         <select>
@@ -103,16 +103,16 @@
   </div>
 
   <div id="footer" class="footer">
-    Virgin Islands Department of Education — Office of Information Technology &nbsp;|&nbsp; <a href="#">Check ticket status</a>
+    OneByJorah Help Desk &nbsp;|&nbsp; <a href="#">Check ticket status</a>
   </div>
 </div>
 
 <!-- ================= STAFF PANEL (separate stylesheet, isolated in an iframe so
-     vide-staff-panel.css / vide-client-portal.css never collide with each other,
+     helpdesk-staff-panel.css / helpdesk-client-portal.css never collide with each other,
      exactly like they never load on the same page in real osTicket) ================= -->
 <iframe id="staff-frame" src="staff-preview.html"></iframe>
 
-<script src="../theme/js/vide-client-portal.js"></script>
+<script src="../theme/js/helpdesk-client-portal.js"></script>
 <script>
 function showView(v){
   document.getElementById('client').classList.toggle('active', v==='client');

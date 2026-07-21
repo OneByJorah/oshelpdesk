@@ -1,5 +1,5 @@
 /* ============================================================
-   VIDE OIT Help Desk — Staff Panel enhancements
+   Help Desk Theme — Staff Panel enhancements
    1) Collapsible mobile sidebar with backdrop + Escape-to-close
    2) Dark mode toggle (persisted, useful for overnight NOC shifts)
 
@@ -21,26 +21,26 @@
     // --- 1) Mobile sidebar toggle + backdrop ---
     if (sidebar && topbar) {
       var backdrop = document.createElement("div");
-      backdrop.className = "vide-sidebar-backdrop";
+      backdrop.className = "helpdesk-sidebar-backdrop";
       document.body.appendChild(backdrop);
 
       var toggleBtn = document.createElement("button");
-      toggleBtn.className = "vide-sidebar-toggle";
+      toggleBtn.className = "helpdesk-sidebar-toggle";
       toggleBtn.setAttribute("aria-label", "Toggle department menu");
       toggleBtn.innerHTML = "&#9776;";
       topbar.insertBefore(toggleBtn, topbar.firstChild);
 
       function closeSidebar() {
-        sidebar.classList.remove("vide-sidebar-open");
-        backdrop.classList.remove("vide-sidebar-open");
+        sidebar.classList.remove("helpdesk-sidebar-open");
+        backdrop.classList.remove("helpdesk-sidebar-open");
       }
       function openSidebar() {
-        sidebar.classList.add("vide-sidebar-open");
-        backdrop.classList.add("vide-sidebar-open");
+        sidebar.classList.add("helpdesk-sidebar-open");
+        backdrop.classList.add("helpdesk-sidebar-open");
       }
 
       toggleBtn.addEventListener("click", function () {
-        sidebar.classList.contains("vide-sidebar-open") ? closeSidebar() : openSidebar();
+        sidebar.classList.contains("helpdesk-sidebar-open") ? closeSidebar() : openSidebar();
       });
       backdrop.addEventListener("click", closeSidebar);
       document.addEventListener("keydown", function (e) {
@@ -53,12 +53,12 @@
     }
 
     // --- 2) Dark mode toggle ---
-    var savedTheme = localStorage.getItem("vide-theme");
+    var savedTheme = localStorage.getItem("helpdesk-theme");
     if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
 
-    if (topbar && !document.querySelector(".vide-theme-toggle")) {
+    if (topbar && !document.querySelector(".helpdesk-theme-toggle")) {
       var themeBtn = document.createElement("button");
-      themeBtn.className = "vide-theme-toggle";
+      themeBtn.className = "helpdesk-theme-toggle";
       themeBtn.setAttribute("aria-label", "Toggle dark mode");
       themeBtn.textContent = savedTheme === "dark" ? "☀" : "🌙";
       topbar.appendChild(themeBtn);
@@ -67,7 +67,7 @@
         var isDark = document.documentElement.getAttribute("data-theme") === "dark";
         var next = isDark ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", next);
-        localStorage.setItem("vide-theme", next);
+        localStorage.setItem("helpdesk-theme", next);
         themeBtn.textContent = next === "dark" ? "☀" : "🌙";
       });
     }

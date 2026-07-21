@@ -1,5 +1,5 @@
 /* ============================================================
-   VIDE OIT Help Desk — Staff/Agent Panel Theme
+   Help Desk Theme — Staff/Agent Panel Theme
    Target: osTicket 1.18.x staff control panel (/scp)
 
    IMPORTANT: osTicket's SCP layout is JS-dependent (drag-resize
@@ -10,11 +10,11 @@
    width/height calculations). Load AFTER scp/css/scp.css.
    ============================================================ */
 
-@import url("vide-tokens.css");
+@import url("helpdesk-tokens.css");
 
 body {
-  font-family: var(--vide-font-base) !important;
-  transition: background var(--vide-transition-base), color var(--vide-transition-base);
+  font-family: var(--helpdesk-font-base) !important;
+  transition: background var(--helpdesk-transition-base), color var(--helpdesk-transition-base);
 }
 
 /* Fluid type — same approach as client portal */
@@ -26,7 +26,7 @@ body, input, textarea, select, button { font-size: clamp(0.85rem, 0.82rem + 0.15
 }
 
 /* --- Dark mode toggle (agents doing overnight NOC shifts will want this) --- */
-.vide-theme-toggle {
+.helpdesk-theme-toggle {
   background: none;
   border: 1px solid rgba(255,255,255,0.25);
   color: #fff;
@@ -36,10 +36,10 @@ body, input, textarea, select, button { font-size: clamp(0.85rem, 0.82rem + 0.15
   cursor: pointer;
   margin-left: 8px;
 }
-.vide-theme-toggle:hover { background: rgba(255,255,255,0.1); }
+.helpdesk-theme-toggle:hover { background: rgba(255,255,255,0.1); }
 
 /* --- Mobile sidebar hamburger toggle --- */
-.vide-sidebar-toggle {
+.helpdesk-sidebar-toggle {
   display: none;
   background: none;
   border: none;
@@ -47,66 +47,66 @@ body, input, textarea, select, button { font-size: clamp(0.85rem, 0.82rem + 0.15
   font-size: 1.4rem;
   cursor: pointer;
   padding: 8px 10px;
-  min-width: var(--vide-touch-target);
-  min-height: var(--vide-touch-target);
+  min-width: var(--helpdesk-touch-target);
+  min-height: var(--helpdesk-touch-target);
 }
 
 /* ---------- Top bar ---------- */
 #staff-header, #header, .staff-header {
-  background: var(--vide-navy-900) !important;
-  border-bottom: 3px solid var(--vide-gold-500);
-  color: var(--vide-white) !important;
+  background: var(--helpdesk-navy-900) !important;
+  border-bottom: 3px solid var(--helpdesk-gold-500);
+  color: var(--helpdesk-white) !important;
 }
-#staff-header a, .staff-header a { color: var(--vide-white) !important; }
+#staff-header a, .staff-header a { color: var(--helpdesk-white) !important; }
 #staff-header .logo, img.logo { max-height: 36px; }
 
 /* ---------- Top-level nav tabs (Tickets / Knowledgebase / etc) ---------- */
 #nav.tabs, ul.tabs {
-  background: var(--vide-navy-800) !important;
+  background: var(--helpdesk-navy-800) !important;
 }
 #nav.tabs li a, ul.tabs li a {
-  color: var(--vide-gray-100) !important;
+  color: var(--helpdesk-gray-100) !important;
   font-weight: 500;
 }
 #nav.tabs li.active a, ul.tabs li.active a,
 #nav.tabs li a:hover, ul.tabs li a:hover {
-  background: var(--vide-gold-500) !important;
-  color: var(--vide-navy-900) !important;
+  background: var(--helpdesk-gold-500) !important;
+  color: var(--helpdesk-navy-900) !important;
   font-weight: 700 !important;
 }
 
 /* ---------- Sub-nav / sidebar ---------- */
 #sidebar, .sidebar, ul.sub-nav {
-  background: var(--vide-gray-50) !important;
-  border-right: 1px solid var(--vide-gray-200);
+  background: var(--helpdesk-gray-50) !important;
+  border-right: 1px solid var(--helpdesk-gray-200);
 }
-.sidebar a, ul.sub-nav a { color: var(--vide-navy-700) !important; }
-.sidebar a:hover, ul.sub-nav a:hover { color: var(--vide-gold-600) !important; }
+.sidebar a, ul.sub-nav a { color: var(--helpdesk-navy-700) !important; }
+.sidebar a:hover, ul.sub-nav a:hover { color: var(--helpdesk-gold-600) !important; }
 .sidebar li.active a, ul.sub-nav li.active a {
-  border-left: 3px solid var(--vide-gold-500);
-  background: var(--vide-gold-100) !important;
+  border-left: 3px solid var(--helpdesk-gold-500);
+  background: var(--helpdesk-gold-100) !important;
   font-weight: 700;
 }
 
 /* ---------- Buttons ---------- */
 .btn, input[type="submit"], button.btn {
-  background: var(--vide-navy-700) !important;
+  background: var(--helpdesk-navy-700) !important;
   color: #fff !important;
   border: none !important;
-  border-radius: var(--vide-radius-sm) !important;
+  border-radius: var(--helpdesk-radius-sm) !important;
   font-weight: 600 !important;
 }
-.btn:hover, input[type="submit"]:hover { background: var(--vide-navy-600) !important; }
-.btn.green, .btn.blue, .btn.orange { background: var(--vide-gold-500) !important; color: var(--vide-navy-900) !important; }
-.btn.red { background: var(--vide-status-overdue) !important; color: #fff !important; }
+.btn:hover, input[type="submit"]:hover { background: var(--helpdesk-navy-600) !important; }
+.btn.green, .btn.blue, .btn.orange { background: var(--helpdesk-gold-500) !important; color: var(--helpdesk-navy-900) !important; }
+.btn.red { background: var(--helpdesk-status-overdue) !important; color: #fff !important; }
 
 /* ---------- Ticket queue table ---------- */
 table.list th {
-  background: var(--vide-navy-900) !important;
+  background: var(--helpdesk-navy-900) !important;
   color: #fff !important;
   font-weight: 600;
 }
-table.list tr:hover td { background: var(--vide-gray-50) !important; }
+table.list tr:hover td { background: var(--helpdesk-gray-50) !important; }
 tr.overdue td, .Row.overdue td   { background: rgba(214, 69, 69, 0.06) !important; }
 tr.answered td                    { background: rgba(30, 142, 90, 0.06) !important; }
 
@@ -120,23 +120,23 @@ tr.answered td                    { background: rgba(30, 142, 90, 0.06) !importa
 
 /* ---------- Ticket thread panel ---------- */
 .thread-entry, .thread-message {
-  border-radius: var(--vide-radius-md);
-  border: 1px solid var(--vide-gray-200) !important;
+  border-radius: var(--helpdesk-radius-md);
+  border: 1px solid var(--helpdesk-gray-200) !important;
 }
 .thread-entry .header, .thread-message .header {
-  background: var(--vide-gray-50) !important;
+  background: var(--helpdesk-gray-50) !important;
 }
 .thread-entry.staff-entry .header, .staff-entry .header {
-  border-left: 3px solid var(--vide-gold-500);
+  border-left: 3px solid var(--helpdesk-gold-500);
 }
 .thread-entry.message .header, .thread-entry.client .header {
-  border-left: 3px solid var(--vide-navy-600);
+  border-left: 3px solid var(--helpdesk-navy-600);
 }
 
 /* ---------- Focus visibility (accessibility) ---------- */
 a:focus, .btn:focus, input:focus, textarea:focus, select:focus {
   outline: none !important;
-  box-shadow: var(--vide-focus-ring) !important;
+  box-shadow: var(--helpdesk-focus-ring) !important;
 }
 
 /* ============================================================
@@ -149,7 +149,7 @@ a:focus, .btn:focus, input:focus, textarea:focus, select:focus {
 }
 
 @media (max-width: 768px) {
-  .vide-sidebar-toggle { display: inline-flex; align-items: center; justify-content: center; }
+  .helpdesk-sidebar-toggle { display: inline-flex; align-items: center; justify-content: center; }
 
   #sidebar, .sidebar {
     position: fixed;
@@ -157,25 +157,25 @@ a:focus, .btn:focus, input:focus, textarea:focus, select:focus {
     width: 260px !important;
     max-width: 80vw;
     transform: translateX(-100%);
-    transition: transform var(--vide-transition-base);
-    z-index: var(--vide-z-overlay);
-    box-shadow: var(--vide-shadow-lg);
+    transition: transform var(--helpdesk-transition-base);
+    z-index: var(--helpdesk-z-overlay);
+    box-shadow: var(--helpdesk-shadow-lg);
     overflow-y: auto;
     padding-bottom: env(safe-area-inset-bottom);
   }
-  #sidebar.vide-sidebar-open, .sidebar.vide-sidebar-open {
+  #sidebar.helpdesk-sidebar-open, .sidebar.helpdesk-sidebar-open {
     transform: translateX(0);
   }
-  .vide-sidebar-backdrop {
+  .helpdesk-sidebar-backdrop {
     display: none;
     position: fixed; inset: 0;
     background: rgba(10,31,68,0.4);
-    z-index: var(--vide-z-nav);
+    z-index: var(--helpdesk-z-nav);
   }
-  .vide-sidebar-backdrop.vide-sidebar-open { display: block; }
+  .helpdesk-sidebar-backdrop.helpdesk-sidebar-open { display: block; }
 
   .sidebar a, ul.sub-nav a {
-    min-height: var(--vide-touch-target);
+    min-height: var(--helpdesk-touch-target);
     display: flex !important;
     align-items: center;
   }
@@ -186,7 +186,7 @@ a:focus, .btn:focus, input:focus, textarea:focus, select:focus {
   }
   .btn, input[type="submit"] {
     padding: 10px 14px !important;
-    min-height: var(--vide-touch-target);
+    min-height: var(--helpdesk-touch-target);
   }
 }
 

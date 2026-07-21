@@ -15,21 +15,21 @@ File to edit: `include/client/header.inc.php`
 
 3. Immediately **after** that line, add:
    ```php
-   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/vide/vide-tokens.css">
-   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/vide/vide-client-portal.css">
+   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/helpdesk/helpdesk-tokens.css">
+   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/helpdesk/helpdesk-client-portal.css">
    ```
 
 4. Right before the closing `</body>` tag (usually in
    `include/client/footer.inc.php`), add:
    ```php
-   <script src="<?php echo ROOT_PATH; ?>js/vide/vide-client-portal.js"></script>
+   <script src="<?php echo ROOT_PATH; ?>js/helpdesk/helpdesk-client-portal.js"></script>
    ```
 
 5. Upload the theme files to:
-   - `css/vide/vide-tokens.css`
-   - `css/vide/vide-client-portal.css`
-   - `js/vide/vide-client-portal.js`
-   - your logo to `images/vide/vide-logo.png` (see LOGO.md)
+   - `css/helpdesk/helpdesk-tokens.css`
+   - `css/helpdesk/helpdesk-client-portal.css`
+   - `js/helpdesk/helpdesk-client-portal.js`
+   - your logo to `images/helpdesk/helpdesk-logo.png` (see LOGO.md)
 
 6. Hard-refresh the client portal (Ctrl+Shift+R) to bust the CSS cache.
 
