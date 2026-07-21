@@ -1,0 +1,14 @@
+# osTicket source fetched by deploy.sh
+/osticket/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Logs
+*.log

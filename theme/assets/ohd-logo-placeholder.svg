@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40">
+  <rect width="40" height="40" rx="8" fill="#FFB300"/>
+  <text x="20" y="27" font-family="JetBrains Mono, monospace" font-weight="800" font-size="16" fill="#0d0d0c" text-anchor="middle">OH</text>
+  <text x="50" y="25" font-family="JetBrains Mono, monospace" font-weight="700" font-size="14" fill="#ffffff">osHelpDesk</text>
+</svg>

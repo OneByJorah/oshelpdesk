@@ -1,10 +1,10 @@
 # Logo
 
-Drop your official VIDE / DOE logo (PNG or SVG, transparent background,
+Drop your official osHelpDesk logo (PNG or SVG, transparent background,
 ~200x60px works well) at:
 
 ```
-images/vide/vide-logo.png
+images/ohd/ohd-logo.png
 ```
 
 Then in `include/client/header.inc.php` (client) and
@@ -12,13 +12,13 @@ Then in `include/client/header.inc.php` (client) and
 site logo and point its `src` at that path, e.g.:
 
 ```php
-<img src="<?php echo ROOT_PATH; ?>images/vide/vide-logo.png" alt="Virgin Islands Department of Education" class="logo">
+<img src="<?php echo ROOT_PATH; ?>images/ohd/ohd-logo.png" alt="osHelpDesk" class="logo">
 ```
 
 The theme CSS already sizes `.logo` / `img.logo` to fit the header
 (`max-height: 40px` client, `36px` staff) — no extra CSS needed once
 you swap the file in.
 
-If you send me the actual VIDE logo file and your official hex codes
-(navy/gold or whatever the real brand sheet says), I can regenerate
-`vide-tokens.css` to match exactly instead of the placeholder palette.
+If you send the actual logo file and your official hex codes,
+`ohd-tokens.css` can be regenerated to match exactly instead of the
+placeholder palette.
