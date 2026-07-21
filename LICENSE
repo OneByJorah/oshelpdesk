@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 JorahOne / Virgin Islands Department of Education OIT
+Copyright (c) 2026 JorahOne, LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---
+
 Note: this license covers the theme, installer script, and documentation in
 this repository only. osTicket itself, downloaded by deploy.sh from
 https://github.com/osTicket/osTicket, is separately licensed under GPL-2.0

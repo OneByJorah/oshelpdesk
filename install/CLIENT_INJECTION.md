@@ -15,21 +15,21 @@ File to edit: `include/client/header.inc.php`
 
 3. Immediately **after** that line, add:
    ```php
-   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/vide/vide-tokens.css">
-   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/vide/vide-client-portal.css">
+   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/ohd/ohd-tokens.css">
+   <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/ohd/ohd-client-portal.css">
    ```
 
 4. Right before the closing `</body>` tag (usually in
    `include/client/footer.inc.php`), add:
    ```php
-   <script src="<?php echo ROOT_PATH; ?>js/vide/vide-client-portal.js"></script>
+   <script src="<?php echo ROOT_PATH; ?>js/ohd/ohd-client-portal.js"></script>
    ```
 
 5. Upload the theme files to:
-   - `css/vide/vide-tokens.css`
-   - `css/vide/vide-client-portal.css`
-   - `js/vide/vide-client-portal.js`
-   - your logo to `images/vide/vide-logo.png` (see LOGO.md)
+   - `css/ohd/ohd-tokens.css`
+   - `css/ohd/ohd-client-portal.css`
+   - `js/ohd/ohd-client-portal.js`
+   - your logo to `images/ohd/ohd-logo.png` (see LOGO.md)
 
 6. Hard-refresh the client portal (Ctrl+Shift+R) to bust the CSS cache.
 

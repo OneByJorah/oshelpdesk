@@ -1,6 +1,6 @@
-# VIDE OIT Help Desk Theme
+# osHelpDesk — osTicket Theme
 
-Navy/gold VIDE-branded theme for osTicket 1.18.x — client portal +
+Dark/amber osHelpDesk-branded theme for osTicket 1.18.x — client portal +
 staff panel, mobile-responsive, dark mode, LDAP-compatible (theme is
 CSS/JS only, doesn't touch auth).
 
@@ -14,7 +14,7 @@ this repo intentionally does not vendor a copy of it, for two reasons:
 
 1. You get security patches/updates from upstream osTicket by pulling
    their releases directly, instead of this repo going stale.
-2. Keeps this repo small, reviewable, and clearly "VIDE's customization
+2. Keeps this repo small, reviewable, and clearly "osHelpDesk's customization
    layer" rather than a confusing partial copy of someone else's large
    codebase.
 
@@ -24,8 +24,8 @@ this theme automatically — see below.
 ## Quick start
 
 ```bash
-git clone <this-repo-url> vide-helpdesk-theme
-cd vide-helpdesk-theme
+git clone <this-repo-url> oshelpdesk-theme
+cd oshelpdesk-theme
 ./deploy.sh /var/www/osticket      # or omit the path to install to ./osticket
 ```
 
@@ -46,9 +46,9 @@ the theme layer) and configure your LDAP/AD auth plugin as usual.
 ```
 deploy.sh              <- run this; downloads osTicket + applies theme
 theme/
-  css/                 <- vide-tokens.css, vide-client-portal.css, vide-staff-panel.css
-  js/                  <- vide-client-portal.js, vide-staff-panel.js
-  assets/              <- logo placeholder + instructions for the real VIDE logo
+  css/                 <- ohd-tokens.css, ohd-client-portal.css, ohd-staff-panel.css
+  js/                  <- ohd-client-portal.js, ohd-staff-panel.js
+  assets/              <- logo placeholder + instructions for the real logo
 install/
   CLIENT_INJECTION.md  <- manual injection steps (fallback if deploy.sh can't
                            find the header file, e.g. on a customized install)
@@ -57,6 +57,13 @@ preview/
   index.html           <- open in a browser to preview client portal + staff
                            panel, linked directly to the real theme/css files
 ```
+
+## Design tokens
+
+Brand palette lives in `theme/css/ohd-tokens.css`. Edit that one file
+to update colors everywhere at once. Defaults use the JorahOne design
+system: amber `#FFB300` accent on near-black `#0d0d0c` ink,
+`JetBrains Mono` for monospace.
 
 ## If deploy.sh can't find your header files
 
@@ -67,7 +74,7 @@ in `install/CLIENT_INJECTION.md` / `install/STAFF_INJECTION.md` instead
 
 ## Troubleshooting "theme isn't showing up"
 
-1. Browser DevTools → Network tab → hard refresh → filter for `vide` —
+1. Browser DevTools → Network tab → hard refresh → filter for `ohd` —
    confirm the CSS/JS files are actually being requested (200, not 404/403).
 2. If 404: your web root path doesn't match what `deploy.sh` installed
    to, or the `<link>` href paths need adjusting for your URL structure.
