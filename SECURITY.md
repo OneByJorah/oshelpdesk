@@ -1,33 +1,36 @@
 # Security Policy
 
-## Supported versions
+## Reporting a Vulnerability
+
+If you discover a security vulnerability, please report it responsibly:
+
+**DO NOT** open a public GitHub issue for security vulnerabilities.
+
+Instead, please email: **info@jorahone.com**
+
+Include:
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
+
+## Response Timeline
+
+- **Acknowledgment**: Within 48 hours
+- **Initial assessment**: Within 1 week
+- **Fix timeline**: Depends on severity
+
+## Supported Versions
 
 | Version | Supported |
 |---------|-----------|
 | Latest  | ✅ Yes    |
 | Older   | ❌ No     |
 
-## Reporting a vulnerability
+## Security Best Practices
 
-If you discover a security issue, please report it responsibly:
-
-1. **Do NOT** open a public GitHub issue.
-2. Email **info@jorahone.com** with a clear description, affected files, steps to reproduce, and potential impact.
-3. Include a suggested fix or patch if you have one.
-
-## Response timeline
-
-- **Acknowledgment**: within 48 hours
-- **Initial assessment**: within 1 week
-- **Fix release**: depends on severity, typically within 2 weeks
-
-## Best practices
-
-- Never commit secrets, passwords, or API keys.
-- Use environment variables for configuration.
-- Keep dependencies up to date.
-- Verify that `deploy.sh` backups (`.bak` files) do not expose sensitive data.
-
-## Scope
-
-This policy covers the theme, installer, and documentation in this repository only. For issues in osTicket itself, please report them to the upstream osTicket maintainers.
+When deploying our projects:
+- Use environment variables for secrets
+- Enable HTTPS in production
+- Keep dependencies updated
+- Follow principle of least privilege

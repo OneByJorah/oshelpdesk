@@ -1,35 +1,41 @@
-# Contributing to oshelpdesk
+# Contributing to JorahOne Projects
 
-Thank you for your interest in improving this osTicket theme.
+Thank you for your interest in contributing! This document provides guidelines for contributing to our projects.
 
-## How to contribute
+## How to Contribute
 
-1. **Fork** the repository.
-2. **Create** a feature branch: `git checkout -b feature/my-change`.
-3. **Commit** your changes with clear, conventional messages.
-4. **Push** to your fork and open a Pull Request.
+1. **Fork the Repository** — Create a fork of the project on GitHub.
+2. **Create a Branch** — Create a feature branch from `main`.
+3. **Make Changes** — Implement your changes with clear commit messages.
+4. **Test** — Ensure your changes work correctly.
+5. **Submit a PR** — Open a pull request with a clear description.
 
-## Development setup
+## Development Setup
 
 ```bash
-git clone https://github.com/OneByJorah/oshelpdesk.git
-cd oshelpdesk
-./deploy.sh ./osticket   # local osTicket copy for manual testing
+git clone https://github.com/your-username/PROJECT.git
+cd PROJECT
+# Follow project-specific setup instructions
 ```
 
-Open `preview/index.html` or `preview/staff-preview.html` in a browser to inspect the theme without a full osTicket install.
+## Code Standards
 
-## Code standards
+- Follow existing code style and conventions
+- Write clear, descriptive commit messages
+- Add comments for complex logic
+- Update documentation as needed
 
-- Keep CSS visual-only; do not change layout classes that osTicket's JavaScript measures.
-- Prefer CSS custom properties in `theme/css/helpdesk-tokens.css` for colors and spacing.
-- Test both client portal and staff panel previews after changes.
-- Update docs when adding new configuration knobs.
+## Pull Request Guidelines
 
-## License
+- Provide a clear PR title and description
+- Reference any related issues
+- Include screenshots for UI changes
+- Ensure all checks pass
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+## Code of Conduct
+
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 
 ## Questions?
 
-Email [info@jorahone.com](mailto:info@jorahone.com).
+Open an issue or contact **info@jorahone.com**.
