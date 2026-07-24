@@ -28,3 +28,6 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# OneByJorah portfolio tooling
+.venv-screenshot/

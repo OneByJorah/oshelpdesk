@@ -1,30 +1,24 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/osTicket-FF6600?style=for-the-badge&logo=ticket&logoColor=white">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge">
-</div>
 
-<br>
+![oshelpdesk banner](docs/assets/banner.svg)
 
-<div align="center">
-  <h1>oshelpdesk</h1>
-  <p><strong>Navy/Gold Helpdesk Theme for osTicket 1.18.x</strong></p>
-  <p>Mobile-responsive, dark mode, LDAP-compatible helpdesk interface.</p>
-  <p>
-    <a href="#features">Features</a> •
-    <a href="#quick-start">Quick Start</a> •
-    <a href="#screenshots">Screenshots</a> •
-    <a href="#contributing">Contributing</a>
-  </p>
+# oshelpdesk
+
+Navy/gold helpdesk theme for osTicket 1.18.x
+
+![License](https://img.shields.io/badge/license-OTHER-brightgreen)
+![Language](https://img.shields.io/badge/language-CSS-blue)
 </div>
 
 ---
 
-## Screenshot
+<p align="center">
+  <img src="docs/assets/screenshot.png" alt="oshelpdesk preview" width="90%">
+</p>
 
-![oshelpdesk Theme](docs/screenshot.png)
-*Professional navy/gold helpdesk theme with dark mode support.*
+<br>
+
+---
 
 ## Features
 
@@ -117,7 +111,18 @@ MIT © Jhonattan L. Jimenez
 
 ---
 
-<div align="center">
-  <p>Professional helpdesk theme for osTicket.</p>
-  <p><a href="https://github.com/OneByJorah">@OneByJorah</a></p>
-</div>
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). All contributions follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## 🔒 Security
+
+Found a vulnerability? Please follow our [Security Policy](SECURITY.md) and report privately to `security@jorahone.com`.
+
+## 📄 License
+
+[Other](LICENSE) © Jhonattan L. Jimenez (OneByJorah)
+
+---
+
+<p align="center">Built with 🌴 by <a href="https://github.com/OneByJorah">OneByJorah</a> · <a href="https://jorahone.com">jorahone.com</a></p>
